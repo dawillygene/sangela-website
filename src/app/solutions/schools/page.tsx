@@ -1,6 +1,15 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
+import {
+  MessageCircleIcon,
+  FileEditIcon,
+  ClipboardIcon,
+  CreditCardIcon,
+  BarChartIcon,
+  UsersIcon,
+  CalendarIcon
+} from "@/src/components/Icons";
 
 export const metadata: Metadata = {
   title: "School Management Software",
@@ -21,9 +30,11 @@ export default function SchoolsPage() {
               <p style={{ fontSize: "1.125rem", color: "rgba(255,255,255,0.8)", lineHeight: 1.7, marginBottom: "2rem" }}>
                 Streamline admissions, track attendance, manage fees, generate report cards, and communicate with parents — all from one platform.
               </p>
-              <div style={{ display: "flex", gap: "1rem", flexWrap: "wrap" }}>
+              <div style={{ display: "flex", gap: "1rem", flexWrap: "wrap", alignItems: "center" }}>
                 <Link href="/contact" className="btn-primary" style={{ background: "white", color: "#1b5e20" }}>Book a Demo →</Link>
-                <a href="https://wa.me/255694053227" className="btn-secondary" target="_blank" rel="noopener noreferrer">💬 WhatsApp Us</a>
+                <a href="https://wa.me/255694053227" className="btn-secondary" target="_blank" rel="noopener noreferrer" style={{ display: "inline-flex", alignItems: "center", gap: "0.5rem" }}>
+                  <MessageCircleIcon size={18} /> WhatsApp Us
+                </a>
               </div>
             </div>
             <div className="hidden lg:block">
@@ -38,15 +49,15 @@ export default function SchoolsPage() {
           <h2 className="section-title" style={{ textAlign: "center", marginBottom: "3rem" }}>Features Built for Education</h2>
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: "1.5rem" }}>
             {[
-              { icon: "📝", title: "Admissions", desc: "Digitized enrollment with online forms, document management, and automated student ID generation." },
-              { icon: "📋", title: "Attendance Tracking", desc: "Daily attendance with mobile check-in, absence alerts to parents, and monthly reports." },
-              { icon: "💳", title: "Fee Management", desc: "Automated fee billing, payment tracking, receipt generation, and overdue balance reminders." },
-              { icon: "📊", title: "Report Cards", desc: "Automated grade computation, customizable report card templates, and academic performance analytics." },
-              { icon: "👨‍👩‍👧‍👦", title: "Parent Portal", desc: "Secure parent access to grades, attendance, fee status, and direct messaging with teachers." },
-              { icon: "📅", title: "Timetable & Calendar", desc: "Automated timetable scheduling, exam calendars, and event management for the school year." },
+              { icon: <FileEditIcon size={32} color="#4CAF50" />, title: "Admissions", desc: "Digitized enrollment with online forms, document management, and automated student ID generation." },
+              { icon: <ClipboardIcon size={32} color="#4CAF50" />, title: "Attendance Tracking", desc: "Daily attendance with mobile check-in, absence alerts to parents, and monthly reports." },
+              { icon: <CreditCardIcon size={32} color="#4CAF50" />, title: "Fee Management", desc: "Automated fee billing, payment tracking, receipt generation, and overdue balance reminders." },
+              { icon: <BarChartIcon size={32} color="#4CAF50" />, title: "Report Cards", desc: "Automated grade computation, customizable report card templates, and academic performance analytics." },
+              { icon: <UsersIcon size={32} color="#4CAF50" />, title: "Parent Portal", desc: "Secure parent access to grades, attendance, fee status, and direct messaging with teachers." },
+              { icon: <CalendarIcon size={32} color="#4CAF50" />, title: "Timetable & Calendar", desc: "Automated timetable scheduling, exam calendars, and event management for the school year." },
             ].map((f) => (
               <div key={f.title} className="glass-card" style={{ padding: "1.5rem", borderRadius: 16 }}>
-                <span style={{ fontSize: "2rem", display: "block", marginBottom: "1rem" }}>{f.icon}</span>
+                <span style={{ display: "block", marginBottom: "1rem" }}>{f.icon}</span>
                 <h3 style={{ fontSize: "1.125rem", fontWeight: 700, color: "#1e293b", marginBottom: "0.5rem" }}>{f.title}</h3>
                 <p style={{ fontSize: "0.875rem", color: "#64748b", lineHeight: 1.7 }}>{f.desc}</p>
               </div>
