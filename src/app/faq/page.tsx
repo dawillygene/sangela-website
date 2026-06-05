@@ -1,8 +1,8 @@
 "use client";
 
-import type { Metadata } from "next";
 import Link from "next/link";
 import { useState } from "react";
+import { MessageCircleIcon } from "@/src/components/Icons";
 
 const faqs = [
   { q: "What industries does SangelaSystem serve?", a: "We specialize in three core industries: retail (POS, inventory, sales tracking), education (school management, admissions, fee tracking), and healthcare (patient records, billing, appointments). We also serve other organizations looking to go paperless." },
@@ -73,9 +73,11 @@ export default function FAQPage() {
         <div className="container">
           <h2 className="section-title" style={{ margin: "0 auto 1rem" }}>Still Have Questions?</h2>
           <p className="section-subtitle" style={{ margin: "0 auto 2rem" }}>Our team is ready to answer any questions you have about our solutions.</p>
-          <div style={{ display: "flex", gap: "1rem", justifyContent: "center", flexWrap: "wrap" }}>
+          <div style={{ display: "flex", gap: "1rem", justifyContent: "center", flexWrap: "wrap", alignItems: "center" }}>
             <Link href="/contact" className="btn-primary">Contact Us →</Link>
-            <a href="https://wa.me/255694053227" className="btn-whatsapp" target="_blank" rel="noopener noreferrer">💬 WhatsApp Us</a>
+            <a href="https://wa.me/255694053227" className="btn-whatsapp" target="_blank" rel="noopener noreferrer" style={{ display: "inline-flex", alignItems: "center", gap: "0.5rem" }}>
+              <MessageCircleIcon size={18} /> WhatsApp Us
+            </a>
           </div>
         </div>
       </section>
