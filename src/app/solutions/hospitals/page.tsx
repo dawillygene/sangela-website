@@ -1,6 +1,15 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
+import {
+  MessageCircleIcon,
+  HospitalIcon,
+  DollarSignIcon,
+  CalendarIcon,
+  UsersIcon,
+  ShieldLockIcon,
+  BarChartIcon
+} from "@/src/components/Icons";
 
 export const metadata: Metadata = {
   title: "Healthcare & Hospital Software",
@@ -21,9 +30,11 @@ export default function HospitalsPage() {
               <p style={{ fontSize: "1.125rem", color: "rgba(255,255,255,0.8)", lineHeight: 1.7, marginBottom: "2rem" }}>
                 Manage patient records, streamline billing, schedule appointments, and coordinate staff — so you can focus on delivering quality care.
               </p>
-              <div style={{ display: "flex", gap: "1rem", flexWrap: "wrap" }}>
+              <div style={{ display: "flex", gap: "1rem", flexWrap: "wrap", alignItems: "center" }}>
                 <Link href="/contact" className="btn-primary" style={{ background: "white", color: "#1b5e20" }}>Book a Demo →</Link>
-                <a href="https://wa.me/255694053227" className="btn-secondary" target="_blank" rel="noopener noreferrer">💬 WhatsApp Us</a>
+                <a href="https://wa.me/255694053227" className="btn-secondary" target="_blank" rel="noopener noreferrer" style={{ display: "inline-flex", alignItems: "center", gap: "0.5rem" }}>
+                  <MessageCircleIcon size={18} /> WhatsApp Us
+                </a>
               </div>
             </div>
             <div className="hidden lg:block">
@@ -38,15 +49,15 @@ export default function HospitalsPage() {
           <h2 className="section-title" style={{ textAlign: "center", marginBottom: "3rem" }}>Features Built for Healthcare</h2>
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: "1.5rem" }}>
             {[
-              { icon: "🏥", title: "Patient Records (EMR)", desc: "Secure, digital patient records with medical history, prescriptions, lab results, and visit notes." },
-              { icon: "💰", title: "Billing & Invoicing", desc: "Automated billing, insurance claim management, payment tracking, and detailed financial reports." },
-              { icon: "📅", title: "Appointment Scheduling", desc: "Online booking, automated reminders, queue management, and doctor availability tracking." },
-              { icon: "👩‍⚕️", title: "Staff Coordination", desc: "Shift scheduling, role-based access, task management, and inter-department communication." },
-              { icon: "🔒", title: "Data Privacy & Security", desc: "Encrypted data storage, role-based permissions, audit trails, and compliance-ready systems." },
-              { icon: "📊", title: "Analytics & Reporting", desc: "Patient volume trends, revenue dashboards, treatment outcomes, and operational KPIs." },
+              { icon: <HospitalIcon size={32} color="#4CAF50" />, title: "Patient Records (EMR)", desc: "Secure, digital patient records with medical history, prescriptions, lab results, and visit notes." },
+              { icon: <DollarSignIcon size={32} color="#4CAF50" />, title: "Billing & Invoicing", desc: "Automated billing, insurance claim management, payment tracking, and detailed financial reports." },
+              { icon: <CalendarIcon size={32} color="#4CAF50" />, title: "Appointment Scheduling", desc: "Online booking, automated reminders, queue management, and doctor availability tracking." },
+              { icon: <UsersIcon size={32} color="#4CAF50" />, title: "Staff Coordination", desc: "Shift scheduling, role-based access, task management, and inter-department communication." },
+              { icon: <ShieldLockIcon size={32} color="#4CAF50" />, title: "Data Privacy & Security", desc: "Encrypted data storage, role-based permissions, audit trails, and compliance-ready systems." },
+              { icon: <BarChartIcon size={32} color="#4CAF50" />, title: "Analytics & Reporting", desc: "Patient volume trends, revenue dashboards, treatment outcomes, and operational KPIs." },
             ].map((f) => (
               <div key={f.title} className="glass-card" style={{ padding: "1.5rem", borderRadius: 16 }}>
-                <span style={{ fontSize: "2rem", display: "block", marginBottom: "1rem" }}>{f.icon}</span>
+                <span style={{ display: "block", marginBottom: "1rem" }}>{f.icon}</span>
                 <h3 style={{ fontSize: "1.125rem", fontWeight: 700, color: "#1e293b", marginBottom: "0.5rem" }}>{f.title}</h3>
                 <p style={{ fontSize: "0.875rem", color: "#64748b", lineHeight: 1.7 }}>{f.desc}</p>
               </div>
