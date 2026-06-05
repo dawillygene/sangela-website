@@ -2,6 +2,14 @@
 
 import Image from "next/image";
 import { useState } from "react";
+import {
+  MapPinIcon,
+  MailIcon,
+  PhoneIcon,
+  ClockIcon,
+  MessageCircleIcon,
+  CheckCircleIcon
+} from "@/src/components/Icons";
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({ name: "", email: "", phone: "", industry: "", message: "" });
@@ -34,7 +42,7 @@ export default function ContactPage() {
 
               {submitted ? (
                 <div style={{ padding: "3rem 2rem", textAlign: "center", background: "#f0fdf4", borderRadius: 20, border: "1px solid #bbf7d0" }}>
-                  <span style={{ fontSize: "3rem", display: "block", marginBottom: "1rem" }}>✅</span>
+                  <CheckCircleIcon size={48} color="#4CAF50" style={{ margin: "0 auto 1rem" }} />
                   <h3 style={{ fontSize: "1.25rem", fontWeight: 700, color: "#1b5e20", marginBottom: "0.5rem" }}>Message Sent!</h3>
                   <p style={{ fontSize: "0.9375rem", color: "#475569" }}>Thank you for reaching out. We will get back to you shortly.</p>
                   <button onClick={() => { setSubmitted(false); setFormData({ name: "", email: "", phone: "", industry: "", message: "" }); }} className="btn-outline-green" style={{ marginTop: "1rem" }}>Send Another Message</button>
@@ -82,13 +90,13 @@ export default function ContactPage() {
 
               <div style={{ display: "flex", flexDirection: "column", gap: "1.5rem" }}>
                 {[
-                  { icon: "📍", title: "Our Location", value: "Dar es Salaam, Tanzania" },
-                  { icon: "📧", title: "Email", value: "helpdesk@sangelasystem.com", href: "mailto:helpdesk@sangelasystem.com" },
-                  { icon: "📞", title: "Phone", value: "+255 694 053 227", href: "tel:+255694053227" },
-                  { icon: "🕘", title: "Business Hours", value: "Monday – Saturday, 9:00 AM – 6:00 PM" },
+                  { icon: <MapPinIcon size={28} color="#4CAF50" />, title: "Our Location", value: "Dar es Salaam, Tanzania" },
+                  { icon: <MailIcon size={28} color="#4CAF50" />, title: "Email", value: "helpdesk@sangelasystem.com", href: "mailto:helpdesk@sangelasystem.com" },
+                  { icon: <PhoneIcon size={28} color="#4CAF50" />, title: "Phone", value: "+255 694 053 227", href: "tel:+255694053227" },
+                  { icon: <ClockIcon size={28} color="#4CAF50" />, title: "Business Hours", value: "Monday – Saturday, 9:00 AM – 6:00 PM" },
                 ].map((item) => (
                   <div key={item.title} className="glass-card" style={{ padding: "1.25rem", borderRadius: 16, display: "flex", gap: "1rem", alignItems: "center" }}>
-                    <span style={{ fontSize: "1.75rem" }}>{item.icon}</span>
+                    <span>{item.icon}</span>
                     <div>
                       <div style={{ fontSize: "0.75rem", fontWeight: 700, color: "#64748b", textTransform: "uppercase", letterSpacing: "0.05em" }}>{item.title}</div>
                       {item.href ? (
@@ -100,8 +108,8 @@ export default function ContactPage() {
                   </div>
                 ))}
 
-                <a href="https://wa.me/255694053227" className="btn-whatsapp" target="_blank" rel="noopener noreferrer" style={{ width: "100%", padding: "1rem" }}>
-                  💬 Chat with Us on WhatsApp
+                <a href="https://wa.me/255694053227" className="btn-whatsapp" target="_blank" rel="noopener noreferrer" style={{ width: "100%", padding: "1rem", display: "inline-flex", alignItems: "center", justifyContent: "center", gap: "0.5rem" }}>
+                  <MessageCircleIcon size={18} /> Chat with Us on WhatsApp
                 </a>
               </div>
             </div>
