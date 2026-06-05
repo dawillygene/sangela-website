@@ -1,6 +1,12 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
+import {
+  TargetIcon,
+  LightbulbIcon,
+  HandshakeIcon,
+  GlobeIcon
+} from "@/src/components/Icons";
 
 export const metadata: Metadata = {
   title: "About Us",
@@ -47,13 +53,13 @@ export default function AboutPage() {
           <h2 className="section-title" style={{ margin: "0 auto 3rem" }}>Our Values</h2>
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(250px, 1fr))", gap: "2rem" }}>
             {[
-              { icon: "🎯", title: "Client-First", desc: "Every decision we make starts with understanding our clients' real needs and challenges." },
-              { icon: "💡", title: "Innovation", desc: "We constantly explore new technologies and approaches to deliver better solutions." },
-              { icon: "🤝", title: "Reliability", desc: "When we commit to a project, we deliver on time and stand behind our work with ongoing support." },
-              { icon: "🌍", title: "Local Impact", desc: "We are proud to serve Tanzanian businesses and contribute to the nation's digital transformation." },
+              { icon: <TargetIcon size={48} color="#4CAF50" style={{ margin: "0 auto" }} />, title: "Client-First", desc: "Every decision we make starts with understanding our clients' real needs and challenges." },
+              { icon: <LightbulbIcon size={48} color="#4CAF50" style={{ margin: "0 auto" }} />, title: "Innovation", desc: "We constantly explore new technologies and approaches to deliver better solutions." },
+              { icon: <HandshakeIcon size={48} color="#4CAF50" style={{ margin: "0 auto" }} />, title: "Reliability", desc: "When we commit to a project, we deliver on time and stand behind our work with ongoing support." },
+              { icon: <GlobeIcon size={48} color="#4CAF50" style={{ margin: "0 auto" }} />, title: "Local Impact", desc: "We are proud to serve Tanzanian businesses and contribute to the nation's digital transformation." },
             ].map((v) => (
               <div key={v.title} className="glass-card" style={{ padding: "2rem", borderRadius: 20, textAlign: "center" }}>
-                <span style={{ fontSize: "2.5rem", display: "block", marginBottom: "1rem" }}>{v.icon}</span>
+                <span style={{ display: "block", marginBottom: "1rem" }}>{v.icon}</span>
                 <h3 style={{ fontSize: "1.125rem", fontWeight: 700, color: "#1e293b", marginBottom: "0.5rem" }}>{v.title}</h3>
                 <p style={{ fontSize: "0.9375rem", color: "#64748b", lineHeight: 1.7 }}>{v.desc}</p>
               </div>
