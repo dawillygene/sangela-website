@@ -1,6 +1,15 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
+import {
+  MessageCircleIcon,
+  TagIcon,
+  BoxIcon,
+  TrendingUpIcon,
+  BuildingIcon,
+  UsersIcon,
+  DollarSignIcon
+} from "@/src/components/Icons";
 
 export const metadata: Metadata = {
   title: "Retail Software Solutions",
@@ -21,9 +30,11 @@ export default function RetailPage() {
               <p style={{ fontSize: "1.125rem", color: "rgba(255,255,255,0.8)", lineHeight: 1.7, marginBottom: "2rem" }}>
                 Optimize inventory, track sales in real-time, manage multiple branches, and engage customers — all from one platform trusted by 60%+ of Kariakoo retailers.
               </p>
-              <div style={{ display: "flex", gap: "1rem", flexWrap: "wrap" }}>
+              <div style={{ display: "flex", gap: "1rem", flexWrap: "wrap", alignItems: "center" }}>
                 <Link href="/contact" className="btn-primary" style={{ background: "white", color: "#1b5e20" }}>Book a Demo →</Link>
-                <a href="https://wa.me/255694053227" className="btn-secondary" target="_blank" rel="noopener noreferrer">💬 WhatsApp Us</a>
+                <a href="https://wa.me/255694053227" className="btn-secondary" target="_blank" rel="noopener noreferrer" style={{ display: "inline-flex", alignItems: "center", gap: "0.5rem" }}>
+                  <MessageCircleIcon size={18} /> WhatsApp Us
+                </a>
               </div>
             </div>
             <div className="hidden lg:block">
@@ -38,15 +49,15 @@ export default function RetailPage() {
           <h2 className="section-title" style={{ textAlign: "center", marginBottom: "3rem" }}>Features Built for Retail</h2>
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: "1.5rem" }}>
             {[
-              { icon: "🏷️", title: "POS System", desc: "Fast, reliable point-of-sale processing with receipt printing, barcode scanning, and payment tracking." },
-              { icon: "📦", title: "Inventory Management", desc: "Real-time stock levels, automated reorder alerts, and batch tracking across all locations." },
-              { icon: "📈", title: "Sales Analytics", desc: "Comprehensive sales reports, trend analysis, and performance dashboards for informed decisions." },
-              { icon: "🏢", title: "Branch Management", desc: "Centralized control of multiple store locations with unified reporting and stock transfers." },
-              { icon: "👥", title: "Customer Records", desc: "Track customer purchases, preferences, and loyalty to drive repeat business." },
-              { icon: "💰", title: "Financial Reporting", desc: "Automated profit/loss statements, expense tracking, and tax-ready financial reports." },
+              { icon: <TagIcon size={32} color="#4CAF50" />, title: "POS System", desc: "Fast, reliable point-of-sale processing with receipt printing, barcode scanning, and payment tracking." },
+              { icon: <BoxIcon size={32} color="#4CAF50" />, title: "Inventory Management", desc: "Real-time stock levels, automated reorder alerts, and batch tracking across all locations." },
+              { icon: <TrendingUpIcon size={32} color="#4CAF50" />, title: "Sales Analytics", desc: "Comprehensive sales reports, trend analysis, and performance dashboards for informed decisions." },
+              { icon: <BuildingIcon size={32} color="#4CAF50" />, title: "Branch Management", desc: "Centralized control of multiple store locations with unified reporting and stock transfers." },
+              { icon: <UsersIcon size={32} color="#4CAF50" />, title: "Customer Records", desc: "Track customer purchases, preferences, and loyalty to drive repeat business." },
+              { icon: <DollarSignIcon size={32} color="#4CAF50" />, title: "Financial Reporting", desc: "Automated profit/loss statements, expense tracking, and tax-ready financial reports." },
             ].map((f) => (
               <div key={f.title} className="glass-card" style={{ padding: "1.5rem", borderRadius: 16 }}>
-                <span style={{ fontSize: "2rem", display: "block", marginBottom: "1rem" }}>{f.icon}</span>
+                <span style={{ display: "block", marginBottom: "1rem" }}>{f.icon}</span>
                 <h3 style={{ fontSize: "1.125rem", fontWeight: 700, color: "#1e293b", marginBottom: "0.5rem" }}>{f.title}</h3>
                 <p style={{ fontSize: "0.875rem", color: "#64748b", lineHeight: 1.7 }}>{f.desc}</p>
               </div>
