@@ -1,35 +1,48 @@
 import Link from "next/link";
 import Image from "next/image";
+import {
+  StoreIcon,
+  GraduationCapIcon,
+  HospitalIcon,
+  FileTextIcon,
+  BarChartIcon,
+  LinkIcon,
+  ZapIcon,
+  MessageCircleIcon,
+  PaletteIcon,
+  SettingsIcon,
+  RocketIcon
+} from "@/src/components/Icons";
 
 const industries = [
   {
     title: "Retail Solutions",
     desc: "POS, inventory, sales tracking, and branch management for retailers across Kariakoo and Tanzania.",
     href: "/solutions/retail",
-    icon: "🏪",
+    icon: <StoreIcon size={24} color="#4CAF50" />,
     img: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=600&h=400&fit=crop",
   },
   {
     title: "School Management",
     desc: "Admissions, attendance, fee tracking, report cards, and parent communication — all in one system.",
     href: "/solutions/schools",
-    icon: "🎓",
+    icon: <GraduationCapIcon size={24} color="#4CAF50" />,
     img: "https://images.unsplash.com/photo-1580582932707-520aed937b7b?w=600&h=400&fit=crop",
   },
   {
     title: "Healthcare Systems",
     desc: "Patient records, billing, appointments, and staff coordination for hospitals and clinics.",
     href: "/solutions/hospitals",
-    icon: "🏥",
+    icon: <HospitalIcon size={24} color="#4CAF50" />,
     img: "https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=600&h=400&fit=crop",
   },
 ];
 
 const benefits = [
-  { icon: "📄", title: "Reduce Paperwork", desc: "Eliminate manual record-keeping with fully digital workflows and automated data capture." },
-  { icon: "📊", title: "Improve Reporting", desc: "Get real-time dashboards and analytics to make informed business decisions faster." },
-  { icon: "🔗", title: "Centralize Operations", desc: "Manage all branches, departments, and processes from a single unified platform." },
-  { icon: "⚡", title: "Boost Productivity", desc: "Automate repetitive tasks so your staff can focus on what matters most." },
+  { icon: <FileTextIcon size={28} color="#4CAF50" />, title: "Reduce Paperwork", desc: "Eliminate manual record-keeping with fully digital workflows and automated data capture." },
+  { icon: <BarChartIcon size={28} color="#4CAF50" />, title: "Improve Reporting", desc: "Get real-time dashboards and analytics to make informed business decisions faster." },
+  { icon: <LinkIcon size={28} color="#4CAF50" />, title: "Centralize Operations", desc: "Manage all branches, departments, and processes from a single unified platform." },
+  { icon: <ZapIcon size={28} color="#4CAF50" />, title: "Boost Productivity", desc: "Automate repetitive tasks so your staff can focus on what matters most." },
 ];
 
 const stats = [
@@ -57,7 +70,7 @@ export default function Home() {
           <div style={{ display: "grid", gridTemplateColumns: "1fr", gap: "3rem", alignItems: "center" }} className="lg:grid-cols-2">
             <div className="animate-fade-in-up">
               <div style={{ display: "inline-flex", alignItems: "center", gap: "0.5rem", padding: "0.5rem 1rem", background: "rgba(255,255,255,0.1)", borderRadius: 100, marginBottom: "1.5rem", border: "1px solid rgba(255,255,255,0.15)" }}>
-                <span style={{ fontSize: "0.75rem" }}>🇹🇿</span>
+                <span style={{ fontSize: "0.8125rem", color: "rgba(255,255,255,0.9)", fontWeight: 700, letterSpacing: "0.05em" }}>TZ</span>
                 <span style={{ fontSize: "0.8125rem", color: "rgba(255,255,255,0.9)", fontWeight: 500 }}>#1 Software Provider in Kariakoo</span>
               </div>
 
@@ -73,12 +86,12 @@ export default function Home() {
                 Streamline your operations, go paperless, and boost productivity with tailored software solutions trusted by 60%+ of Kariakoo retailers and leading institutions.
               </p>
 
-              <div style={{ display: "flex", gap: "1rem", flexWrap: "wrap" }}>
+              <div style={{ display: "flex", gap: "1rem", flexWrap: "wrap", alignItems: "center" }}>
                 <Link href="/contact" className="btn-primary" style={{ background: "white", color: "#1b5e20", fontWeight: 700 }}>
                   Book a Demo →
                 </Link>
-                <a href="https://wa.me/255694053227" className="btn-secondary" target="_blank" rel="noopener noreferrer">
-                  💬 Talk on WhatsApp
+                <a href="https://wa.me/255694053227" className="btn-secondary" target="_blank" rel="noopener noreferrer" style={{ display: "inline-flex", alignItems: "center", gap: "0.5rem" }}>
+                  <MessageCircleIcon size={18} /> Talk on WhatsApp
                 </a>
               </div>
             </div>
@@ -128,7 +141,7 @@ export default function Home() {
                   <div style={{ position: "relative", height: 200, overflow: "hidden" }}>
                     <Image src={ind.img} alt={ind.title} fill style={{ objectFit: "cover", transition: "transform 0.5s ease" }} sizes="(max-width: 768px) 100vw, 33vw" />
                     <div style={{ position: "absolute", inset: 0, background: "linear-gradient(180deg, transparent 50%, rgba(0,0,0,0.5))" }} />
-                    <span style={{ position: "absolute", top: 16, left: 16, fontSize: "2rem", background: "rgba(255,255,255,0.9)", borderRadius: 12, width: 48, height: 48, display: "flex", alignItems: "center", justifyContent: "center" }}>{ind.icon}</span>
+                    <span style={{ position: "absolute", top: 16, left: 16, background: "rgba(255,255,255,0.9)", borderRadius: 12, width: 48, height: 48, display: "flex", alignItems: "center", justifyContent: "center" }}>{ind.icon}</span>
                   </div>
                   <div style={{ padding: "1.5rem" }}>
                     <h3 style={{ fontSize: "1.25rem", fontWeight: 700, color: "#1e293b", marginBottom: "0.5rem" }}>{ind.title}</h3>
@@ -185,13 +198,13 @@ export default function Home() {
 
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(240px, 1fr))", gap: "2rem" }}>
             {[
-              { step: "01", title: "Consultation", desc: "We learn about your operations, challenges, and goals in a free consultation.", icon: "💬" },
-              { step: "02", title: "Custom Design", desc: "Our team designs a tailored solution specific to your industry and workflows.", icon: "🎨" },
-              { step: "03", title: "Development", desc: "We build, test, and iterate on your software with regular progress updates.", icon: "⚙️" },
-              { step: "04", title: "Deployment & Support", desc: "We deploy your system, train your team, and provide ongoing support.", icon: "🚀" },
+              { step: "01", title: "Consultation", desc: "We learn about your operations, challenges, and goals in a free consultation.", icon: <MessageCircleIcon size={36} color="#4CAF50" style={{ margin: "0 auto" }} /> },
+              { step: "02", title: "Custom Design", desc: "Our team designs a tailored solution specific to your industry and workflows.", icon: <PaletteIcon size={36} color="#4CAF50" style={{ margin: "0 auto" }} /> },
+              { step: "03", title: "Development", desc: "We build, test, and iterate on your software with regular progress updates.", icon: <SettingsIcon size={36} color="#4CAF50" style={{ margin: "0 auto" }} /> },
+              { step: "04", title: "Deployment & Support", desc: "We deploy your system, train your team, and provide ongoing support.", icon: <RocketIcon size={36} color="#4CAF50" style={{ margin: "0 auto" }} /> },
             ].map((s) => (
               <div key={s.step} className="glass-card" style={{ padding: "2rem 1.5rem", borderRadius: 20, textAlign: "center" }}>
-                <span style={{ fontSize: "2.5rem", display: "block", marginBottom: "1rem" }}>{s.icon}</span>
+                <span style={{ display: "block", marginBottom: "1rem" }}>{s.icon}</span>
                 <div style={{ fontSize: "0.75rem", fontWeight: 800, color: "#4CAF50", letterSpacing: "0.1em", marginBottom: "0.5rem" }}>STEP {s.step}</div>
                 <h3 style={{ fontSize: "1.125rem", fontWeight: 700, color: "#1e293b", marginBottom: "0.5rem" }}>{s.title}</h3>
                 <p style={{ fontSize: "0.875rem", color: "#64748b", lineHeight: 1.6 }}>{s.desc}</p>
@@ -215,7 +228,7 @@ export default function Home() {
               { quote: "The healthcare management system has streamlined our patient records and billing. Our staff can now focus on patient care instead of paperwork.", name: "Dr. Joseph Kimaro", role: "Clinic Director, Dar es Salaam" },
             ].map((t) => (
               <div key={t.name} className="glass-card" style={{ padding: "2rem", borderRadius: 20, textAlign: "left" }}>
-                <div style={{ fontSize: "2rem", color: "#4CAF50", marginBottom: "1rem" }}>&ldquo;</div>
+                <div style={{ fontSize: "2.5rem", color: "#4CAF50", marginBottom: "0.5rem", lineHeight: 1 }}>&ldquo;</div>
                 <p style={{ fontSize: "0.9375rem", color: "#475569", lineHeight: 1.7, marginBottom: "1.5rem", fontStyle: "italic" }}>{t.quote}</p>
                 <div>
                   <div style={{ fontWeight: 700, color: "#1e293b", fontSize: "0.9375rem" }}>{t.name}</div>
@@ -261,12 +274,12 @@ export default function Home() {
           <p style={{ fontSize: "1.125rem", color: "rgba(255,255,255,0.8)", maxWidth: 560, margin: "0 auto 2rem" }}>
             Join the growing list of Tanzanian organizations transforming their operations with SangelaSystem.
           </p>
-          <div style={{ display: "flex", gap: "1rem", justifyContent: "center", flexWrap: "wrap" }}>
+          <div style={{ display: "flex", gap: "1rem", justifyContent: "center", flexWrap: "wrap", alignItems: "center" }}>
             <Link href="/contact" className="btn-primary" style={{ background: "white", color: "#1b5e20", fontWeight: 700 }}>
               Request a Free Consultation →
             </Link>
-            <a href="https://wa.me/255694053227" className="btn-secondary" target="_blank" rel="noopener noreferrer">
-              💬 WhatsApp Us Now
+            <a href="https://wa.me/255694053227" className="btn-secondary" target="_blank" rel="noopener noreferrer" style={{ display: "inline-flex", alignItems: "center", gap: "0.5rem" }}>
+              <MessageCircleIcon size={18} /> WhatsApp Us Now
             </a>
           </div>
         </div>
