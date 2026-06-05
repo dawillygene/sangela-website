@@ -1,6 +1,15 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
+import {
+  LaptopIcon,
+  LinkIcon,
+  SmartphoneIcon,
+  GraduationCapIcon,
+  CompassIcon,
+  WrenchIcon,
+  MessageCircleIcon
+} from "@/src/components/Icons";
 
 export const metadata: Metadata = {
   title: "Services",
@@ -11,42 +20,42 @@ const services = [
   {
     title: "Custom Software Development",
     desc: "We design and build bespoke software systems tailored to your specific business workflows, ensuring seamless integration with your existing processes.",
-    icon: "💻",
+    icon: <LaptopIcon size={24} color="#4CAF50" />,
     img: "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=600&h=400&fit=crop",
     features: ["Requirements analysis", "UI/UX design", "Agile development", "Quality assurance testing"],
   },
   {
     title: "System Integration",
     desc: "Connect your existing tools and processes into a unified platform. We integrate payment systems, messaging, and third-party APIs.",
-    icon: "🔗",
+    icon: <LinkIcon size={24} color="#4CAF50" />,
     img: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=600&h=400&fit=crop",
     features: ["API integration", "Data migration", "Third-party connectors", "Real-time sync"],
   },
   {
     title: "Mobile App Development",
     desc: "Extend your operations to mobile with custom Android and iOS applications that keep your team connected on the go.",
-    icon: "📱",
+    icon: <SmartphoneIcon size={24} color="#4CAF50" />,
     img: "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=600&h=400&fit=crop",
     features: ["Cross-platform apps", "Offline functionality", "Push notifications", "Mobile dashboards"],
   },
   {
     title: "Training & Onboarding",
     desc: "Comprehensive training programs to ensure your team can use the new system confidently from day one.",
-    icon: "🎓",
+    icon: <GraduationCapIcon size={24} color="#4CAF50" />,
     img: "https://images.unsplash.com/photo-1524178232363-1fb2b075b655?w=600&h=400&fit=crop",
     features: ["On-site training", "Video tutorials", "User manuals", "Admin certification"],
   },
   {
     title: "IT Consulting",
     desc: "Strategic technology advice to help your organization make the right software and infrastructure decisions.",
-    icon: "🧭",
+    icon: <CompassIcon size={24} color="#4CAF50" />,
     img: "https://images.unsplash.com/photo-1553877522-43269d4ea984?w=600&h=400&fit=crop",
     features: ["Technology audits", "Digital roadmaps", "Cost optimization", "Vendor selection"],
   },
   {
     title: "Maintenance & Support",
     desc: "Reliable ongoing support to keep your systems running smoothly. We offer 24/7 monitoring and rapid response.",
-    icon: "🛠️",
+    icon: <WrenchIcon size={24} color="#4CAF50" />,
     img: "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=600&h=400&fit=crop",
     features: ["24/7 monitoring", "Bug fixes", "Performance tuning", "Feature updates"],
   },
@@ -73,7 +82,7 @@ export default function ServicesPage() {
                 <div style={{ position: "relative", height: 200 }}>
                   <Image src={s.img} alt={s.title} fill style={{ objectFit: "cover" }} sizes="(max-width: 768px) 100vw, 50vw" />
                   <div style={{ position: "absolute", inset: 0, background: "linear-gradient(180deg, transparent 40%, rgba(0,0,0,0.5))" }} />
-                  <span style={{ position: "absolute", top: 16, left: 16, fontSize: "2rem", background: "rgba(255,255,255,0.9)", borderRadius: 12, width: 48, height: 48, display: "flex", alignItems: "center", justifyContent: "center" }}>{s.icon}</span>
+                  <span style={{ position: "absolute", top: 16, left: 16, background: "rgba(255,255,255,0.9)", borderRadius: 12, width: 48, height: 48, display: "flex", alignItems: "center", justifyContent: "center" }}>{s.icon}</span>
                 </div>
                 <div style={{ padding: "1.5rem" }}>
                   <h3 style={{ fontSize: "1.25rem", fontWeight: 700, color: "#1e293b", marginBottom: "0.75rem" }}>{s.title}</h3>
@@ -97,9 +106,11 @@ export default function ServicesPage() {
         <div className="container">
           <h2 style={{ fontSize: "2rem", fontWeight: 900, color: "white", marginBottom: "1rem" }}>Need a Custom Solution?</h2>
           <p style={{ fontSize: "1.0625rem", color: "rgba(255,255,255,0.8)", maxWidth: 520, margin: "0 auto 2rem" }}>Tell us about your business challenges and we will design the perfect software solution for you.</p>
-          <div style={{ display: "flex", gap: "1rem", justifyContent: "center", flexWrap: "wrap" }}>
+          <div style={{ display: "flex", gap: "1rem", justifyContent: "center", flexWrap: "wrap", alignItems: "center" }}>
             <Link href="/contact" className="btn-primary" style={{ background: "white", color: "#1b5e20" }}>Get a Free Consultation →</Link>
-            <a href="https://wa.me/255694053227" className="btn-secondary" target="_blank" rel="noopener noreferrer">💬 WhatsApp Us</a>
+            <a href="https://wa.me/255694053227" className="btn-secondary" target="_blank" rel="noopener noreferrer" style={{ display: "inline-flex", alignItems: "center", gap: "0.5rem" }}>
+              <MessageCircleIcon size={18} /> WhatsApp Us
+            </a>
           </div>
         </div>
       </section>
