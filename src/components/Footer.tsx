@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
+import { MessageCircleIcon, MapPinIcon, MailIcon, PhoneIcon, ClockIcon } from "@/src/components/Icons";
 
 export function Footer() {
   return (
@@ -9,9 +10,11 @@ export function Footer() {
         <div style={{ background: "linear-gradient(135deg, #4CAF50 0%, #2e7d32 100%)", borderRadius: 20, padding: "3rem 2rem", textAlign: "center", marginBottom: "3rem", position: "relative", overflow: "hidden" }}>
           <h2 style={{ fontSize: "1.75rem", fontWeight: 800, marginBottom: "0.75rem" }}>Ready to Transform Your Operations?</h2>
           <p style={{ fontSize: "1.0625rem", opacity: 0.9, marginBottom: "1.5rem", maxWidth: 520, marginLeft: "auto", marginRight: "auto" }}>Join 60%+ of Kariakoo retailers and leading institutions who trust SangelaSystem.</p>
-          <div style={{ display: "flex", gap: "1rem", justifyContent: "center", flexWrap: "wrap" }}>
+          <div style={{ display: "flex", gap: "1rem", justifyContent: "center", flexWrap: "wrap", alignItems: "center" }}>
             <Link href="/contact" className="btn-secondary">Book a Demo</Link>
-            <a href="https://wa.me/255694053227" className="btn-whatsapp" target="_blank" rel="noopener noreferrer">💬 WhatsApp Us</a>
+            <a href="https://wa.me/255694053227" className="btn-whatsapp" target="_blank" rel="noopener noreferrer" style={{ display: "inline-flex", alignItems: "center", gap: "0.5rem" }}>
+              <MessageCircleIcon size={18} /> WhatsApp Us
+            </a>
           </div>
         </div>
 
@@ -46,10 +49,18 @@ export function Footer() {
           <div>
             <h3 style={{ fontSize: "0.875rem", fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.05em", color: "rgba(255,255,255,0.5)", marginBottom: "1.25rem" }}>Contact</h3>
             <div style={{ display: "flex", flexDirection: "column", gap: "0.75rem" }}>
-              <span style={{ fontSize: "0.9375rem", color: "rgba(255,255,255,0.7)" }}>📍 Dar es Salaam, Tanzania</span>
-              <a href="mailto:helpdesk@sangelasystem.com" style={{ fontSize: "0.9375rem", color: "rgba(255,255,255,0.7)", textDecoration: "none" }}>📧 helpdesk@sangelasystem.com</a>
-              <a href="tel:+255694053227" style={{ fontSize: "0.9375rem", color: "rgba(255,255,255,0.7)", textDecoration: "none" }}>📞 +255 694 053 227</a>
-              <span style={{ fontSize: "0.9375rem", color: "rgba(255,255,255,0.7)" }}>🕘 Mon – Sat, 9am – 6pm</span>
+              <span style={{ fontSize: "0.9375rem", color: "rgba(255,255,255,0.7)", display: "inline-flex", alignItems: "center", gap: "0.5rem" }}>
+                <MapPinIcon size={16} color="#4CAF50" /> Dar es Salaam, Tanzania
+              </span>
+              <a href="mailto:helpdesk@sangelasystem.com" style={{ fontSize: "0.9375rem", color: "rgba(255,255,255,0.7)", textDecoration: "none", display: "inline-flex", alignItems: "center", gap: "0.5rem" }}>
+                <MailIcon size={16} color="#4CAF50" /> helpdesk@sangelasystem.com
+              </a>
+              <a href="tel:+255694053227" style={{ fontSize: "0.9375rem", color: "rgba(255,255,255,0.7)", textDecoration: "none", display: "inline-flex", alignItems: "center", gap: "0.5rem" }}>
+                <PhoneIcon size={16} color="#4CAF50" /> +255 694 053 227
+              </a>
+              <span style={{ fontSize: "0.9375rem", color: "rgba(255,255,255,0.7)", display: "inline-flex", alignItems: "center", gap: "0.5rem" }}>
+                <ClockIcon size={16} color="#4CAF50" /> Mon – Sat, 9am – 6pm
+              </span>
             </div>
           </div>
         </div>
